@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Other options{% endblock %}
+
+{% block body %}
+    {% include 'component/desktop/header.html.twig'  with {'path':path('app_home'),'title':"Other options"} %}
+    <div class="container d-flex flex-column justify-content-center align-items-center" id="otherPage">
+        <div class="containerWithBackground">
+            <a href="{{ path('app_pdf') }}">Export to pdf</a>
+        </div>
+        <div class="containerWithBackground">
+            <a href="{{ path('app_operations') }}">Recurring operations</a>
+        </div>
+        <div class="containerWithBackground">
+            <a href="{{ path('app_budget') }}">Monthly Budget</a>
+        </div>
+        <div class="containerWithBackground">
+            <a href="{{ path('app_payment') }}">Payment methods</a>
+        </div>
+        <div class="containerWithBackground">
+            <a href="">Advanced statistics</a>
+        </div>
+    </div>
+
+
+
+{% endblock %}

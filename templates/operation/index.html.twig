@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment{% endblock %}
+
+{% block body %}
+    {% set adding = {'manual':'Manual confirmation','automatic':'Auto add'} %}
+    {% set type = {'income':'Income','outcome':'Outcome'} %}
+    {% set repetition = {'annualy':'Annualy','monthly':'Monthly','weekly':'Weekly','daily':'Daily'} %}
+    {% include 'component/desktop/header.html.twig'  with {'path':path('app_home'),'title':"Recurring operations"} %}
+    <div class="container-lg px-5 py-5 d-flex flex-column align-items-start ">
+        <a href="{{ path('add_operation') }}" class="mb-5 button1">Add recurring operation</a>
+        <div class=" centered w-100" id="operationPage">
+
+            {% for op in operations %}
+                <a href="{{ path('edit_operation',{'id':op.id}) }}"
+                   class="oneOperation me-2 mb-2 containerWithBackground d-flex flex-column align-items-center justify-content-between ">
+                    <div class="d-flex flex-column align-items-center mb-4 ">
+                        <h1 class="dark-text font-size-3">{{ op.name }}</h1>
+                        <span class="dash font-size-3 font-weight-bold">{{ op.montant }}€</span>
+                        <span class="font-size-1 grey-2">{{ type[op.type] }} - {{ adding[op.addingType] }}</span>
+
+                    </div>
+                    <div class="dateContainer w-100 dash d-flex flex-row justify-content-between align-items-center">
+                        <span>{{ op.firstDate|date('d/m/Y') }}</span>
+                        <span><img src="{{ asset('pictures/right-arrow.svg') }}" alt="icon arrow"></span>
+                        <span><img src="{{ asset('pictures/calendar.svg') }}"
+                                   alt="icon calendar"> {{ repetition[op.repetition] }}</span>
+                    {% if op.lastDate is not null %}
+                        <span><img src="{{ asset('pictures/right-arrow.svg') }}" alt="icon arrow"></span>
+
+                        <span>{{ op.lastDate|date('d/m/Y') }}</span>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

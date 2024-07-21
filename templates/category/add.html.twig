@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    {% include 'component/desktop/header' %}
+ {{ form_start(form) }}
+    {{ form_row(form.type) }}
+    {{ form_row(form.montant) }}
+    {{ form_row(form.name) }}
+ {{ form_end(form) }}
+{% endblock %}

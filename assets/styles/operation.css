@@ -1,0 +1,30 @@
+#operationPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+#operationPage a{
+    text-decoration: none;
+}
+
+#operationPage .dateContainer{
+font-size: var(--font-size-2);
+    padding: 8px 13px;
+    align-self: stretch;
+    border-radius: 11px;
+    background: rgba(206, 0, 67, 0.21);
+}
+#operationPage .oneOperation{
+    width: 30%;
+}
+@media only screen and (max-device-width: 990px){
+    #operationPage{
+        flex-direction: column;
+
+    }
+    #operationPage .oneOperation{
+        width: 100%;
+    }
+}

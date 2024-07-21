@@ -1,0 +1,40 @@
+{% if cards is not empty %}
+    <h2 class="my-5">Credit Cards</h2>
+    {% for card in cards %}
+        <a  href="{{ path('edit_payment',{'id':card.id}) }}" class="w-50 containerWithBackground my-2 d-flex flex-column align-items-center text-decoration-none">
+            <h3 class="text-center">{{ card.name }}</h3>
+            <div class="d-flex flex-row w-100 justify-content-between">
+                <div class="d-flex flex-column align-items-start">
+                    <span>Outcomes : {{ payementController.stat(card.id)['outcomes'] }}€</span>
+                    <span>Uses : {{ payementController.stat(card.id)['nb_outcome'] }}</span>
+
+                </div>
+                <div class="d-flex flex-column align-items-start">
+                    <span>Incomes : {{ payementController.stat(card.id)['incomes'] }}€</span>
+                    <span>Uses : {{ payementController.stat(card.id)['nb_income'] }} </span>
+
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+{% endif %}
+                {% if wallets is not empty %}
+                    <h2 class="my-5">Wallets</h2>
+                    {% for wallet in wallets %}
+                        <a  href="{{ path('edit_payment',{'id':wallet.id}) }}" class="w-50 containerWithBackground my-2 d-flex flex-column align-items-center text-decoration-none">
+                            <h3 class="text-center">{{ wallet.name }}</h3>
+                            <div class="d-flex flex-row w-100 justify-content-between">
+                                <div class="d-flex flex-column align-items-start">
+                                    <span>Outcomes : {{ payementController.stat(wallet.id)['outcomes'] }}€</span>
+                                    <span>Uses : {{ payementController.stat(wallet.id)['nb_outcome'] }}</span>
+
+                                </div>
+                                <div class="d-flex flex-column align-items-start">
+                                    <span>Incomes : {{ payementController.stat(wallet.id)['incomes'] }}€</span>
+                                    <span>Uses : {{ payementController.stat(wallet.id)['nb_income'] }}</span>
+
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                {% endif %}

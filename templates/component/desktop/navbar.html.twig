@@ -1,0 +1,42 @@
+{% set currentPath = path(app.request.attributes.get('_route'),
+    app.request.attributes.get('_route_params')) %}
+
+<header class="d-flex flex-row justify-content-center align-items-start">
+    <nav class="w-50 d-flex flex-row justify-content-around align-items-center navbar-desktop">
+        <a href="{{ path('app_home') }}" class="  {{ currentPath == '/home' ? 'grey-1' }}">Statistics</a>
+        <a href="{{ path('app_category') }}" class="">Category</a>
+        <span onclick="plusCLick.call(this)"><img src="{{ asset('pictures/plus.svg') }}" alt="icone +"></span>
+        <a href="{{ path('app_other') }}" class="">Other</a>
+        <a href="{{ path('app_settings') }}" class="">Settings</a>
+        <div class="d-none popover" id="popoverDk">
+            <button><a href="{{ path('new_outcome') }}">Outcome</a></button>
+            <button><a href="{{ path('new_income') }}">Income</a></button>
+        </div>
+    </nav>
+    <nav class="navbar-responsif">
+        <a href="{{ path('app_home') }}"><img src="{{ asset('pictures/statistiqueIcon.svg') }}" alt="icon statistique"></a>
+        <a href="{{ path('app_payment') }}"><img src="{{ asset('pictures/cashIcon.svg') }}" alt="icon cash"></a>
+        <button onclick="plusCLickResponsive()"><img src="{{ asset('pictures/plusIcon.svg') }}" alt="icon plus">
+        </button>
+        <a href="{{ path('app_other') }}"><img src="{{ asset('pictures/boxIcon.svg') }}" alt="icon box"></a>
+        <a href="{{ path('app_settings') }}"><img src="{{ asset('pictures/settingIcon.svg') }}" alt="icon settings"></a>
+        <div class="d-none " id="popoverRp">
+            <button><a href="{{ path('new_outcome') }}">Outcome</a></button>
+            <button><a href="{{ path('new_income') }}">Income</a></button>
+        </div>
+    </nav>
+</header>
+
+<script defer>
+    function plusCLick() {
+        let popover = document.querySelector('#popoverDk')
+        popover.classList.toggle('d-none')
+        popover.classList.toggle('d-flex')
+    }
+
+    function plusCLickResponsive() {
+        let popover = document.querySelector('#popoverRp')
+        popover.classList.toggle('d-none')
+        popover.classList.toggle('d-flex')
+    }
+</script>

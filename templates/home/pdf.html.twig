@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Category{% endblock %}
+
+{% block body %}
+    {% include 'component/desktop/header.html.twig'  with {'path':path('app_home'),'title':"Create pdf"} %}
+    <div class="d-flex flex-row justify-content-between" id="formPage">
+
+        <div class="p-5 leftPanel">
+            {{ form_start(form) }}
+            {{ form_row(form.mensuelDetails) }}
+            {{ form_row(form.names) }}
+            {{ form_row(form.EntiteName) }}
+
+            <button type="submit" class="button1">Save</button>
+            {{ form_end(form) }}
+        </div>
+
+        <div class="rightPanel">
+
+            {% if pdfPath is defined %}
+                <div class="d-flex flex-row justify-content-between align-items-center mb-5">
+                    <h1>Preview :</h1>
+                    <button class="button2"><a href="{{ path('download_pdf',{'id':pdf.id}) }}">Download</a></button>
+                </div>
+                <canvas id="pdf-canvas" width="600" height="800"></canvas>
+            {% endif %}
+        </div>
+
+
+        {% if pdfPath is defined %}
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    let w = window.innerWidth;
+                    let h = window.innerHeight;
+                    if(w <= 990){
+                        let rightPannel = document.querySelector('.rightPanel')
+                        let leftPanel = document.querySelector('.leftPanel')
+                        leftPanel.innerHTML =    rightPannel.innerHTML
+rightPannel.innerHTML = ''
+
+                    }
+                    var url = '{{ pdfPath }}';
+                    var canvas = document.getElementById('pdf-canvas');
+                    var context = canvas.getContext('2d');
+
+                    // Load the PDF
+                    pdfjsLib.getDocument(url).promise.then(function (pdf) {
+                        // Fetch the first page
+                        pdf.getPage(1).then(function (page) {
+                            var viewport = page.getViewport({scale: 1.5});
+
+                            // Adjust canvas size to the PDF page
+                            canvas.width = viewport.width;
+                            canvas.height = viewport.height;
+
+                            // Render the PDF page into the canvas context
+                            var renderContext = {
+                                canvasContext: context,
+                                viewport: viewport
+                            };
+                            page.render(renderContext);
+                        });
+                    });
+
+
+                });
+            </script>
+        {% endif %}
+    </div>
+
+{% endblock %}

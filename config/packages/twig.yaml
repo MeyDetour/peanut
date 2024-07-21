@@ -1,5 +1,9 @@
 twig:
     file_name_pattern: '*.twig'
+    form_themes: ['bootstrap_5_layout.html.twig']
+    globals:
+        categoryController : '@App\Controller\CategoryController'
+        payementController : '@App\Controller\PaymentController'
 
 when@test:
     twig:

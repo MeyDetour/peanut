@@ -1,0 +1,116 @@
+#formPage .leftPanel, #formPage .rightPanel {
+    width: 50vw;
+}
+
+
+/* =========RIGHT PANEL =========*/
+
+#formPage .rightPanel {
+    background: var(--atchoum-color);
+    border-left: 1px solid var(--grey-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 5%;
+    width: 50vw;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+#formPage .category {
+    background: var(--background-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px;
+    margin-bottom: 5%;
+    text-decoration: none;
+    color: var(--dash-color);
+    cursor: pointer;
+}
+
+
+/* =========LEFT PANEL =========*/
+
+
+#formPage .leftPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#formPage .leftPanel form {
+    width: 60%;
+}
+
+/* =========FORMULAIRE=========*/
+.input-group-text {
+    display: none;
+}
+
+#formPage #category_type, #formPage #operation_type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+#formPage #category_type input, #formPage #operation_type input, #formPage #operation_addingType input {
+    margin-right: 10px;
+}
+
+#formPage #category_type div, #formPage #operation_type div, #formPage #operation_addingType div {
+    width: fit-content;
+    margin-inline: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#formPage #operation_addingType div {
+    margin-block: 10px;
+}
+
+#formPage form > div, #formPage form > fieldset {
+    margin-bottom: 3vh !important;
+}
+
+input[type=radio]:checked {
+    background: var(--primary-color) !important;
+}
+
+input[type=checkbox] {
+    margin-right: 10px;
+}
+input:checked{
+    background: var(--primary-color) !important;
+}
+.form-check {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+#formPage .isolation > #budget_montant1 ,#formPage .isolation > #budget_montant2 {
+
+}
+
+#formPage .isolation > div {
+    margin-bottom: 3px !important;
+}
+
+@media only screen and (max-device-width: 990px){
+
+    #formPage .rightPanel {
+       display: none;
+    }   #formPage .leftPanel {
+        width: 100vw;
+    }
+    #formPage .leftPanel form {
+        width: 100%;
+    }
+}

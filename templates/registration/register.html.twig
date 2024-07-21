@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <div class="container py-5  d-flex flex-column align-items-center justify-content-between" id="registerPage">
+        <div class="d-flex flex-column align-items-center">
+            <img src="{{ asset('pictures/peanutLogo.png') }}" alt="icone de Peanut">
+            <h1>Welcome to Peanut !</h1>
+            <h3>Create account</h3>
+        </div>
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+
+            <button  type="submit" class="button1">Register</button>
+            {{ form_end(registrationForm) }}
+
+        <a href="{{ path('app_login') }}">Sign in</a>
+
+    </div>
+
+{% endblock %}

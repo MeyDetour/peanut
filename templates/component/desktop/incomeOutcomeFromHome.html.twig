@@ -1,0 +1,63 @@
+<details class="w-100 ">
+    <summary onclick="arrowClick.call(this)"
+             class="  font-size-3 dark-text d-flex flex-row align-iotems-center">{{ cat.name }}
+        <img
+                src="{{ asset('pictures/arrow-bottom.svg') }}" data-arrow="bottom" class="ms-2"
+                alt=""></summary>
+    {% for transaction in cat.transactions %}
+        {% if transaction.type ==  type %}
+            <div class="mt-3 d-flex containerWithBackground flex-row w-100 justify-content-between oneTransactionContainer"
+                 id="oneTransactionContainer-{{ transaction.id }}">
+                <div class="d-flex flex-column">
+                    <span>{{ transaction.name }}</span>
+                    <span>{{ transaction.date|date('d/m/Y') }}</span>
+                    {% if  transaction.payment is not null %}
+                        <span>Payment : {{ transaction.payment.name }} ({{ transaction.payment.type }})</span>
+                    {% endif %}
+                </div>
+                <div class="d-flex flex-column align-items-end">
+                    <span>{{ transaction.montant }}</span>
+                    <div class="d-flex flex-row " style="width: fit-content !important;">
+                        <a href="{{ path('edit_transaction',{'id':transaction.id}) }}" class="linkToEditTransaction">
+                            <img src="{{ asset('pictures/pencil.svg') }}" alt="icon pencil" class=""> </a>
+                        <button class="linkToDeleteTransaction" onclick="deleteTransaction.call(this)"
+                                data-id="{{ transaction.id }}">
+                            <img src="{{ asset('pictures/bin.svg') }}" alt="icon bin">
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</details>
+<script defer>
+    function deleteTransaction() {
+        let id = this.getAttribute('data-id')
+        fetch(`/transaction/${id}/remove`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                if (data.message == 'ok') {
+                    let element = document.querySelector(`#oneTransactionContainer-${id}`);
+                    if (element) {
+                        element.remove();
+                    }
+                }
+            })
+    }
+
+    function arrowClick() {
+
+        let img = this.children[0]
+        console.log(img.getAttribute('data-arrow'))
+        if (img.getAttribute('data-arrow') == 'bottom') {
+            img.src = '/pictures/arrow-top.svg'
+            img.setAttribute('data-arrow', 'top')
+        } else {
+            img.src = '/pictures/arrow-bottom.svg'
+        }
+    }
+
+</script>

@@ -1,0 +1,94 @@
+#choicePaiementPage {
+    height: 92vh !important;
+}
+
+#choicePaiementPage .hr {
+    width: 91px;
+    height: 1px;
+    background: var(--grey-1);
+}
+
+#choicePaiementPage .cardPaiement {
+    border-radius: 40px 0px;
+    position: relative;
+    height: 269px;
+    width: 224px !important;
+    background: linear-gradient(180deg, #E96065 15.61%, #D70044 100%);
+}
+
+#choicePaiementPage .cardPaiement .whiteBg {
+    border-radius: 40px 0px;
+    background: var(--atchoum-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 83%;
+    width: 93%;
+}
+
+#choicePaiementPage .cardPaiement .whiteBg img {
+    width: 50%;
+}
+
+
+/*============POP UP================*/
+.popupform {
+    z-index: 1;
+}
+
+.popupform .header {
+    position: relative;
+}
+
+.popupform .header img {
+    width: 100%;
+}
+
+.popupform .header span, .popupform .header button {
+    color: var(--atchoum-color);
+    font-weight: bold;
+    position: absolute;
+}
+
+.popupform .header span {
+
+    font-size: var(--font-size-3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popupform .header button {
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%);
+    width: 37px;
+}
+
+.popupform .body {
+    margin-top: -21px;
+    background: var(--atchoum-color);
+    border-radius: 30px 30px 6px 6px;
+    padding: 10% 20%;
+}
+
+
+@media only screen and (max-device-width: 990px) {
+    #choicePaiementPage .cardPaiement {
+        height: 368px;
+        width: 260px;
+    }
+    #paymentContainer{
+        margin-top: -53px !important;
+        z-index: 1;
+        position: relative;
+        border-radius: 60px 60px 0px 0px;
+        margin: 0;
+        width: 100vw;
+        background: var(--background-color);
+    }
+}

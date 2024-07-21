@@ -1,0 +1,40 @@
+
+#registerPage, #loginPage{
+
+    height: 100vh;
+    width: 100vw;
+
+}
+#registerPage img ,#loginPage img {
+    height: 20vh;
+}
+
+#registerPage form ,#loginPage form  {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#registerPage form div ,#loginPage form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#registerPage form input ,#loginPage form input {
+    width: 100%;
+    text-align: center !important;
+}
+#registerPage a,#loginPage a{
+    color: var(--secondary-color) !important;
+}
+
+#loginPage form .checkbox {
+    flex-direction: row !important;
+    justify-content: center;
+}
+
+#loginPage form .checkbox input{
+    width: 5%;
+}

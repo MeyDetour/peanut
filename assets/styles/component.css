@@ -1,0 +1,143 @@
+.dk-header {
+    background: url("/pictures/desktopHeader.png");
+    width: 100%;
+    height: 10vh;
+    display: flex;
+}
+.responsiv-header {
+    display: none;
+    background: url("/pictures/desktopHeader.png");
+    width: 100%;
+    height: 18vh;
+    z-index: -1;
+}
+
+
+/* ============= NAVBAR===============*/
+
+.navbar-desktop {
+    background: var(--primary-color);
+    border-radius: 0px 0px 28px 28px;
+    height: 8vh;
+    position: relative;
+}
+
+.navbar-desktop > a, .navbar-desktop > span {
+    color: var(--atchoum-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: var(--font-size-2);
+    width: calc(80% / 5.5);
+    text-align: center;
+}
+
+.navbar-desktop > a:hover, .navbar-desktop > span:hover {
+    color: var(--grey-1);
+
+}
+
+.navbar-desktop > span {
+    cursor: pointer;
+}
+
+#popoverDk {
+    position: absolute;
+    bottom: -80%;
+    border: 0;
+    left: 50%;
+    width: 100%;
+    border-radius: 0px 0px 23px 23px;
+    transform: translateX(-50%);
+    background: var(--tertiary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: -1;
+    align-items: center;
+    padding-inline: 13px;
+    height: 80%;
+    transition: .5s all;
+
+}
+
+#popoverDk a {
+    color: var(--atchoum-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: var(--font-size-3);
+}
+
+
+
+
+/* ============= NAVBAR phone ===============*/
+
+
+.navbar-responsif {
+    display: none;
+    width: 94% !important;
+    border-radius: 622px;
+    height: 158px;
+    background: var(--dark-primary);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.navbar-responsif img {
+    width: 77px;
+    height: 77px;
+
+}
+
+#popoverRp{
+    position: absolute;
+    bottom: 107%;
+    background: var(--dark-primary);
+    color: var(--atchoum-color);
+    width: 62% !important;
+    height: 70%;
+    border-radius: 52px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#popoverRp a{
+    font-size: 50px;
+    color: var(--atchoum-color);
+    text-decoration: none;
+}
+@media only screen and (max-device-width: 990px) {
+    .responsiv-header{
+        display: flex;
+    }
+    .dk-header{
+        display: none;
+    }
+}
+@media only screen and (max-device-width: 500px) {
+    header {
+        position: fixed;
+        bottom: 2%;
+        width: 100vw;
+        left: 0%;
+        backdrop-filter: blur(4px);
+        z-index: 5;
+    }
+
+    .navbar-desktop {
+        display: none !important;    ;
+    }
+
+    .navbar-responsif {
+        display: flex !important;
+
+    }
+
+
+    .dk-header img{
+        width: 118px;
+        height: 118px;
+    }
+
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment{% endblock %}
+
+{% block body %}
+    {% include 'component/desktop/header.html.twig'  with {'path':path('app_home'),'title':"Pay Methods"} %}
+    <div class="container centered w-100">
+
+
+
+
+
+        <div class="d-flex flex-row justify-content-between" id="formPage">
+            <div class="p-5 leftPanel">
+                {{ form_start(form) }}
+                {{ form_row(form.type) }}
+                {{ form_row(form.name) }}
+                <button class="button1" type="submit">Save</button>
+                {{ form_end(form) }}
+            </div>
+            <div class="rightPanel">
+               {% include 'component/desktop/payments.html.twig' with {'cards':cards,'wallets':wallets} %}
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
