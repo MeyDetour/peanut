@@ -17,21 +17,19 @@ class Budget
     #[ORM\Column(type: Types::DECIMAL, precision: 20, scale: 2)]
     private ?string $montant = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $rappel1 = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 15, scale: 2)]
+    #[ORM\Column(type: Types::DECIMAL, precision: 20, scale: 2)]
     private ?string $montant1 = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 15, scale: 2, nullable: true)]
+    #[ORM\Column(type: Types::DECIMAL, precision: 20, scale: 2, nullable: true)]
     private ?string $montant2 = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $rappel2 = null;
 
-    #[ORM\ManyToOne(inversedBy: 'budgets')]
+    #[ORM\OneToOne(inversedBy: 'budget', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $owner = null;
+
+
 
     public function getId(): ?int
     {
@@ -50,17 +48,7 @@ class Budget
         return $this;
     }
 
-    public function getRappel1(): ?string
-    {
-        return $this->rappel1;
-    }
 
-    public function setRappel1(string $rappel1): static
-    {
-        $this->rappel1 = $rappel1;
-
-        return $this;
-    }
 
     public function getMontant1(): ?string
     {
@@ -86,27 +74,18 @@ class Budget
         return $this;
     }
 
-    public function getRappel2(): ?string
-    {
-        return $this->rappel2;
-    }
-
-    public function setRappel2(?string $rappel2): static
-    {
-        $this->rappel2 = $rappel2;
-
-        return $this;
-    }
 
     public function getOwner(): ?User
     {
         return $this->owner;
     }
 
-    public function setOwner(?User $owner): static
+    public function setOwner(User $owner): static
     {
         $this->owner = $owner;
 
         return $this;
     }
+
+
 }

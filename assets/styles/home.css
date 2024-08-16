@@ -1,6 +1,6 @@
 /* ============= HOMEPAGE===============*/
 #desktopIndex .firstHomeContainer {
-    width: 40% !important;
+    width: 20% !important;
 }
 
 #desktopIndex .popupBackground {
@@ -21,7 +21,7 @@
 }
 
 .statistiquesContainer hr {
-    width: 90%;
+    width: 100%;
 }
 
 .statistiquesContainer .vr {
@@ -29,9 +29,10 @@
     width: 1px !important;
 }
 
-.statistiquesContainer div div, div {
+.statistiquesContainer> div > div{
 
-    width: 100% !important;
+    width: 100% ;
+    margin-bottom: 50px;
 }
 
 
@@ -43,7 +44,7 @@
     margin-block: 25px;
 }
 
-#desktopIndex .oneTransactionContainer:hover #desktopIndex .linkToDeleteTransaction, #desktopIndex .oneTransactionContainer:hover .linkToEditTransaction {
+#desktopIndex .oneTransactionContainer:hover .linkToDeleteTransaction, #desktopIndex .oneTransactionContainer:hover .linkToEditTransaction {
     opacity: 1 !important;
 }
 
@@ -159,7 +160,8 @@
 }
 
 #otherPage div {
-    width: 20%;
+    width: 45%;
+    cursor: pointer;
     margin-block: 16px;
     padding: 37px 50px;
 
@@ -180,6 +182,8 @@
 
 
 
+
+/*============== WARNING ===========*/
 
 /*============== PDF ===========*/
 

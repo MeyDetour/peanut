@@ -1,33 +1,46 @@
 
-#registerPage, #loginPage{
+#registerPage, #loginPage {
 
     height: 100vh;
     width: 100vw;
 
 }
-#registerPage img ,#loginPage img {
+
+#registerPage img, #loginPage img {
     height: 20vh;
 }
 
-#registerPage form ,#loginPage form  {
+#registerPage form, #loginPage form {
     width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#registerPage form div ,#loginPage form div {
+
+#registerPage form div, #loginPage form div {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-#registerPage form input ,#loginPage form input {
+#registerPage form input, #loginPage form input {
     width: 100%;
     text-align: center !important;
 }
-#registerPage a,#loginPage a{
-    color: var(--secondary-color) !important;
+
+#registerPage a, #loginPage a, #otherPage a {
+    color: var(--dark-text-blue) !important;
+    text-align: center;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+#otherPage a {
+    text-decoration: none !important;
 }
 
 #loginPage form .checkbox {
@@ -35,6 +48,6 @@
     justify-content: center;
 }
 
-#loginPage form .checkbox input{
+#loginPage form .checkbox input {
     width: 5%;
 }

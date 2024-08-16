@@ -5,7 +5,7 @@
 {% block body %}
     {% include 'component/desktop/header.html.twig'  with {'path':path('app_home'),'title':"Settings"} %}
 <div class="d-flex flex-column justify-content-center align-items-center" id="otherPage">
-<h1>Non développée</h1>
+    <a href="{{ path('app_logout') }}">Log out</a>
 </div>
 
 

@@ -38,6 +38,7 @@ reload-migrations:
 
 cc:
 	$(SYMFONY_CONSOLE) cache:clear
+	npm cache clean --force
 user:
 	$(SYMFONY_CONSOLE) make:user
 	$(SYMFONY_CONSOLE) make:registration-form

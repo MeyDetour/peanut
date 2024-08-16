@@ -10,18 +10,24 @@
 
         :root {
             --dash: #131313;
-            --primary-color: #C40047;
+            --primary-color: #0b4a84;
             --grey-2: #929292;
+
         }
 
         body {
             padding: 40px;
+            font-family: Inter, sans-serif;
         }
 
-        header {
+        body, header {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        header {
+            width: 100%;
         }
 
         h1 {
@@ -49,8 +55,8 @@
         .tableContainer {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            width: 80%;
+            align-items: center;
+            width: 100%;
         }
 
         table {
@@ -59,8 +65,8 @@
             margin-top: 10px;
             border-collapse: collapse;
             border: 2px solid rgb(140 140 140);
-            font-family: sans-serif;
-            font-size: 0.8rem;
+
+            font-size: 1.1em;
             letter-spacing: 1px;
         }
 
@@ -85,7 +91,12 @@
         td {
             border: 1px solid rgb(160 160 160);
             padding: 8px 10px;
+            text-align: center;
 
+        }
+
+        th{
+            font-size: 1.2em !important;
         }
 
         td:last-of-type {
@@ -100,12 +111,9 @@
             text-align: right;
         }
 
-        tfoot td {
-            font-weight: bold;
-        }
 
         hr {
-            width: 80%;
+            width: 100%;
         }
 
         /*===============PAYMENTS==============*/
@@ -133,86 +141,105 @@
 <header>
     <div class="identityPeanut">
 
-        <h1>Peanut</h1> <img loading="eager" src="{{ absolute_url('/pictures/peanutLogo.png') }}" alt="icon peanut">
+        <h1>Peanut</h1> <img loading="eager" src="{{ absolute_url(asset('/pictures/peanutLogo.png')) }}"
+                             alt="icon peanut">
     </div>
 
     <hr>
     <h2>Summary of expenses </h2>
-    <hr>
-    {% for index,datum in data %}
-        <div class="tableContainer">
-            <h1>{{ index }}</h1>
-            <table>
-                {% if incomeOutcome %}
-
-                    <caption>
-                        Summary of expenses for the year {{ index }}
-                    </caption>
-                    <thead>
-                    <tr>
-                        <th scope="col">Months</th>
-                        <th scope="col">Average</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for index,datum2 in  datum.months %}
-
-                        <tr>
-                            <th scope="row">{{ months[index] }}</th>
-                            <th scope="row">{{ datum2.total/datum2.number }}</th>
-                            <th scope="row">{{ datum2.total }}</th>
-                        </tr>
-                    {% endfor %}
-
-
-                    </tbody>
-                {% endif %}
-                <tfoot>
-                <tr>
-                    <th scope="row" colspan="2">Total of year</th>
-                    <td>{{ datum.total }}</td>
-                </tr>
-                </tfoot>
-            </table>
-
-        </div>
-
-    {% endfor %}
-
-    <hr>
-    <h2>Wallets and credits cards</h2>
-    <hr>
-    <div id="paymentsContainer">
-        <div class="left">
-            {% for pay in payments %}
-                {% if pay.type =='card' %}
-                    {% if walletName %}
-
-                        <h3>{{ pay.name }}</h3>
-                    {% else %}
-                        <h3>Credit card {{ loop.index }}</h3>
-                    {% endif %}
-                    <span>Utilisation : {{ pay.getTransactions|length }}</span>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <div class="hr"></div>
-        <div class="right">
-            {% for pay in payments %}
-                {% if pay.type =='cash' %}
-                    {% if walletName %}
-                        <h3>{{ pay.name }}</h3>
-                    {% else %}
-                        <h3>Credit card {{ loop.index }}</h3>
-                    {% endif %}
-                    <span>Utilisation : {{ pay.getTransactions|length }}</span>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
 
 </header>
+<hr>
+{% for index,datum in data %}
+    <div class="tableContainer">
+        <h1>{{ index }}</h1>
+        <table>
+            {% if incomeOutcome %}
+
+                <caption>
+                    Summary of expenses for the year {{ index }}
+                </caption>
+                <thead>
+                <tr>
+                    <th scope="col">Months</th>
+                    <th scope="col">Average incomes</th>
+                    <th scope="col">Average outcomes</th>
+                    <th scope="col">Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for index,datum2 in  datum.months %}
+
+                    <tr>
+                        <td> {{ months[index] }}</td>
+                        <td>
+                            {% if  datum2.incomes.number != 0 %}
+                                {{ datum2.incomes.total/datum2.incomes.number }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if  datum2.outcomes.number != 0 %}
+                                {{ datum2.outcomes.total/datum2.outcomes.number }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </td>
+                        <td>{{ datum2.total }}</td>
+                    </tr>
+                {% endfor %}
+
+
+                </tbody>
+            {% endif %}
+            <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total of year</td>
+
+                <td>{{ datum.total }}</td>
+            </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+{% endfor %}
+
+<hr>
+<h2>Wallets and credits cards</h2>
+<hr>
+<div id="paymentsContainer">
+    <div class="left">
+        {% for pay in payments %}
+            {% if pay.type =='card' %}
+                {% if walletName %}
+
+                    <h3>{{ pay.name }}</h3>
+                {% else %}
+                    <h3>Credit card {{ loop.index }}</h3>
+                {% endif %}
+                <span>Utilisation : {{ pay.getTransactions|length }}</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="hr"></div>
+    <div class="right">
+        {% for pay in payments %}
+            {% if pay.type =='cash' %}
+                {% if walletName %}
+                    <h3>{{ pay.name }}</h3>
+                {% else %}
+                    <h3>Credit card {{ loop.index }}</h3>
+                {% endif %}
+                <span>Utilisation : {{ pay.getTransactions|length }}</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
 
 </body>
 </html>

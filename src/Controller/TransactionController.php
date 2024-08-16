@@ -37,8 +37,10 @@ class TransactionController extends AbstractController
         if ($repository->count(['type' => 'income']) == 0 || $repository->count(['type' => 'outcome']) == 0) {
             return $this->redirectToRoute('app_category');
         }
+
         $route = $request->attributes->get('_route');
         $transaction = new Transaction();
+        $transaction->setDate(new \DateTimeImmutable());
         if ($route == 'new_outcome') {
             $form = $this->createForm(TransactionType::class, $transaction, ['user' => $user]);
             $defaultCategory = $repository->findBy(['type' => 'outcome', 'owner' => $user])[0];
@@ -62,7 +64,6 @@ class TransactionController extends AbstractController
             }
 
             $transaction->setOwner($user);
-            $transaction->setDate(new \DateTimeImmutable());
             $manager->persist($transaction);
             $manager->flush();
             return $this->redirectToRoute('app_home');

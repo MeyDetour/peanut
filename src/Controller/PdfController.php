@@ -78,7 +78,7 @@ class PdfController extends AbstractController
                 'months'=>$this->months,
                 'payments'=>$this->paymentsRepository->findBy(['owner'=>$this->getUser()],['type'=>'ASC'])
             ]);
-
+  /*          dd($transactions);*/
             $pdfFilePath = $this->getParameter('kernel.project_dir') . '/public/uploads/pdf/' . uniqid() . '.pdf';
 
             // Générer le PDF
@@ -135,12 +135,29 @@ class PdfController extends AbstractController
             if (!isset($data[$year]['months'][$month])) {
                 $data[$year]['months'][$month] = [
                     'total' => 0,
-                    'number' => 0,
+                    'incomes' => [
+                        'total' => 0,
+                        'number'=>0
+                    ],
+                    'outcomes' => [
+                        'total' => 0,
+                        'number'=>0
+                    ],
                 ];
             }
-            $data[$year]['total'] += $transaction->getMontant();
-            $data[$year]['months'][$month]['total'] += $transaction->getMontant();
-            $data[$year]['months'][$month]['number'] += 1;
+            if($transaction->getType()=='income'){
+                $data[$year]['total'] += $transaction->getMontant();
+                $data[$year]['months'][$month]['total'] += $transaction->getMontant();
+                $data[$year]['months'][$month]['incomes']['total'] += $transaction->getMontant();
+                $data[$year]['months'][$month]['incomes']['number'] += 1;
+
+            }
+            else{
+                $data[$year]['total'] -= $transaction->getMontant();
+                $data[$year]['months'][$month]['total'] -= $transaction->getMontant();
+                $data[$year]['months'][$month]['outcomes']['total'] += $transaction->getMontant();
+                $data[$year]['months'][$month]['outcomes']['number'] += 1;
+            }
         }
 
 

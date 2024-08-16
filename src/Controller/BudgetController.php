@@ -32,6 +32,7 @@ class BudgetController extends AbstractController
             $budget->setOwner($user);
             $manager->persist($budget);
             $manager->flush();
+            return $this->redirectToRoute('app_home');
         }
         return $this->render('budget/add.html.twig', [
             'form' => $form->createView()
@@ -46,6 +47,8 @@ class BudgetController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->persist($budget);
             $manager->flush();
+            return $this->redirectToRoute('app_home');
+
         }
         return $this->render('budget/add.html.twig', [
             'form' => $form->createView(),

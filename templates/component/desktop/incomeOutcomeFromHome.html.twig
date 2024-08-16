@@ -1,9 +1,8 @@
 <details class="w-100 ">
     <summary onclick="arrowClick.call(this)"
-             class="  font-size-3 dark-text d-flex flex-row align-iotems-center">{{ cat.name }}
-        <img
-                src="{{ asset('pictures/arrow-bottom.svg') }}" data-arrow="bottom" class="ms-2"
-                alt=""></summary>
+             class="  font-size-3 dark-text d-flex flex-row align-items-center">
+        <div class="{{ cat.type == 'outcome' ? 'rondBleu' : 'rondRouge' }}"></div>{{ cat.name }}
+    </summary>
     {% for transaction in cat.transactions %}
         {% if transaction.type ==  type %}
             <div class="mt-3 d-flex containerWithBackground flex-row w-100 justify-content-between oneTransactionContainer"
@@ -49,14 +48,21 @@
     }
 
     function arrowClick() {
+        let elt = this.children[0]
+        if (elt.classList.contains('rondBleuPlein')) {
+            elt.classList.remove('rondBleuPlein')
+            elt.classList.add('rondBleu')
 
-        let img = this.children[0]
-        console.log(img.getAttribute('data-arrow'))
-        if (img.getAttribute('data-arrow') == 'bottom') {
-            img.src = '/pictures/arrow-top.svg'
-            img.setAttribute('data-arrow', 'top')
-        } else {
-            img.src = '/pictures/arrow-bottom.svg'
+        } else if (elt.classList.contains('rondBleu')) {
+            elt.classList.add('rondBleuPlein')
+            elt.classList.remove('rondBleu')
+        }
+        else if (elt.classList.contains('rondRouge')) {
+            elt.classList.add('rondRougePlein')
+            elt.classList.remove('rondRouge')
+        } else if (elt.classList.contains('rondRougePlein')) {
+            elt.classList.add('rondRouge')
+            elt.classList.remove('rondRougePlein')
         }
     }
 

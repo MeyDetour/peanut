@@ -14,10 +14,13 @@ font-size: var(--font-size-2);
     padding: 8px 13px;
     align-self: stretch;
     border-radius: 11px;
-    background: rgba(206, 0, 67, 0.21);
+    background: rgb(8 0 206 / 21%);
+    width: fit-content;
 }
+
 #operationPage .oneOperation{
-    width: 30%;
+
+    width: fit-content;
 }
 @media only screen and (max-device-width: 990px){
     #operationPage{

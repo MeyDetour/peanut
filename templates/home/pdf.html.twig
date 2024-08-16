@@ -20,7 +20,7 @@
 
             {% if pdfPath is defined %}
                 <div class="d-flex flex-row justify-content-between align-items-center mb-5">
-                    <h1>Preview :</h1>
+                    <h1 class="dark-text">Preview :</h1>
                     <button class="button2"><a href="{{ path('download_pdf',{'id':pdf.id}) }}">Download</a></button>
                 </div>
                 <canvas id="pdf-canvas" width="600" height="800"></canvas>

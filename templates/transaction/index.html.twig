@@ -8,6 +8,7 @@
         <div class="p-5 leftPanel">
             {{ form_start(form) }}
             {{ form_row(form.category) }}
+            {{ form_row(form.date) }}
             {{ form_row(form.name) }}
             <div class="d-flex flex-row align-items-center">
                 {{ form_widget(form.montant) }} <span class="ms-3 font-size-4">€</span>
@@ -48,6 +49,8 @@
                     });
             }
         });
+
+
     </script>
 
 {% endblock %}

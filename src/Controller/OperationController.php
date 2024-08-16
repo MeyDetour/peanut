@@ -186,7 +186,7 @@ class OperationController extends AbstractController
 
     public function loadOperation($operation)
     {
-
+        //load recurrent operations that adding itself
         $today = new \DateTimeImmutable();
         //get occurences
         $occurs = explode(';', $operation->getOccurences());
@@ -326,7 +326,7 @@ class OperationController extends AbstractController
 
     public function getUnValidateOperations()
     {
-
+        //get operation witch must be validate
         $today = new \DateTimeImmutable();
         $operations = $this->recurringOperationRepository->findBy(['owner' => $this->getUser()]);
         $unvalidateOperations = [];

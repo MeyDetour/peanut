@@ -20,27 +20,16 @@ class BudgetType extends AbstractType
                     'placeholder'=>'Enter amount'
                 ]
             ])
-            ->add('rappel1', TextType::class, [
-                'label' => 'Message sent at first reminder',
-                'attr'=>[
-                    'placeholder'=>'Type the message here'
-                ]
-            ])
+
             ->add('montant1', MoneyType::class, [
-                'label' => 'Amount to reach',
+                'label'=>"Amount for the first threshold reminder.",
                 'attr'=>[
                     'placeholder'=>'Enter amount'
                 ]
             ])
-            ->add('rappel2', TextType::class, [
-                'label' => 'Amount to reach',
-                'required' => false,
-                'attr'=>[
-                    'placeholder'=>'Type the message here'
-                ]
-            ])
+
             ->add('montant2', MoneyType::class, [
-                'label' => 'Message sent at second reminder',
+                'label' => 'Amount for the second threshold reminder.',
                 'required' => false,
                 'attr'=>[
                     'placeholder'=>'Enter amount'

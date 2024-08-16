@@ -23,7 +23,7 @@
         </div>
         <div class="rightPanel">
             {% if category is not defined %}
-            <h2 class="mb-5">Incomes</h2>
+            <h2 class="mb-5 font-size-2 dark-text uppercase">Incomes</h2>
             {% for cat in categoriesIncome %}
                 <a href="{{ path('edit_category',{'id':cat.id}) }}" class="category">
                     <div class="d-flex flex-column">
@@ -38,7 +38,7 @@
                 </a>
             {% endfor %}
 
-            <h2 class="mb-5">Outcomes</h2>
+            <h2 class="mb-5 font-size-2 dark-text uppercase">Outcomes</h2>
             {% for cat in categoriesOutcome %}
                 <a href="{{ path('edit_category',{'id':cat.id}) }}" class="category">
                     <div class="d-flex flex-column">

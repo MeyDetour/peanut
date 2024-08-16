@@ -9,19 +9,21 @@
     --h1-font-size: 32px;
     --h1-font-weight: bold;
     --h2-font-size: 32px;
-    --h2-font-weight: bold;
-    --background-color: #FEF9F9;
-    --primary-color: #C40047;
+    --background-color: #F6F7FB;
+    --primary-color: #002545;
     --secondary-color: #B11515;
-    --grey-1: #D9D9D9;
+    --grey-1: #E6E6E6;
     --dash-color: #3E3E3E;
-    --grey-2: #929292;
-    --stroke-color: #EDD3D3;
-    --dark-text-color: #6B0E0E;
+    --grey-2: #6C6C6C;
+    --stroke-color: #F7F7F7;
+    --dark-text-color: #4A2A2A;
     --dark-primary : #910101;
-    --atchoum-color: #FEFEFE;
-    --placeholder-color: #E692B1;
+    --atchoum-color: #FFFEFE;
+    --placeholder-color: #B0B0B0;
     --tertiary-color: #DCB990;
+    --text-color : #9184B4;
+    --inputStroke : #BAB6D2;
+    --dark-text-blue : #15184D;
 }
 @media only screen and (max-device-width: 990px){
 
@@ -51,22 +53,24 @@ body {
 h1 {
     font-size: var(--h1-font-size);
     font-weight: var(--h1-font-weight);
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 h2 {
     font-size: var(--h2-font-size);
-    font-weight: var(--h2-font-weight);
+    font-weight: 600;
     color: var(--dark-text-color);
 }
 
 h3 {
     font-size: var(--font-size-3);
-    color: var(--primary-color);
+    color: var(--text-color);
     font-style: italic;
     font-weight: bold;
 }
-
+.uppercase{
+    text-transform: uppercase;
+}
 button {
     border: 0;
     background: transparent;
@@ -151,10 +155,10 @@ summary {
 .containerWithBackground {
     background: var(--atchoum-color);
     border: 1px solid var(--stroke-color);
-    padding: 20px;
+    padding: 30px;
 
     width: fit-content;
-    border-radius: 6px;
+    border-radius: 30px;
 }
 /* ------ BASIC CLASS --------- */
 
@@ -168,9 +172,9 @@ select{
     font-size: var(--font-size-2);
 }
 input {
-    border-radius: 6px !important;
     background: var(--atchoum-color) !important;
-    border: var(--primary-color) 1px solid !important;
+    border-radius: 30px !important;
+    border: var(--inputStroke) 1px solid !important;
     padding: 10px !important;
     text-align: left;
     font-size: var(--font-size-2);
@@ -184,22 +188,25 @@ input::placeholder {
 
 input[type=radio] {
     border-radius: 50% !important;
+    margin-top: 0;
 }
 
 .button1 {
     text-decoration: none;
     padding: 5px 20px;
-    background: var(--primary-color);
+    background: linear-gradient(86deg, #4E2CBD -7.69%, #5625FA 101.06%);
     color: var(--atchoum-color);
     font-size: var(--font-size-3);
     font-weight: bold;
     border: 0;
     outline: 0;
-    border-radius: 6px;
+    border-radius: 30px;
 }
 
 .button1:hover {
-    background: var(--secondary-color)
+    background: linear-gradient(86deg, #351994 -7.69%, #35159F 101.06%) !important;
+
+
 }
 
 .button1 a {
@@ -211,7 +218,7 @@ input[type=radio] {
     text-decoration: none;
     padding: 5px 20px;
     background: var(--grey-1);
-    color: var(--grey-2) !important;
+    color: var(--dark-text-blue) !important;
     font-size: var(--font-size-3);
     font-weight: bold;
     border: 0;
@@ -220,7 +227,7 @@ input[type=radio] {
 }
 
 .button2 a {
-    color: var(--grey-2);
+    color: var(--dark-text-blue);
     text-decoration: none;
 }
 
@@ -236,3 +243,55 @@ img {
     vertical-align: top !important;
 }
 
+
+
+.rondBleu , .rondRouge , .rondBleuPlein , .rondRougePlein{
+    width: 20px !important;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 24px;
+}
+
+.rondBleu{
+
+    border: 4px solid #5625FA;
+}
+.rondRouge{
+
+    border: 4px solid #F02828;
+}.rondBleuPlein{
+     background: linear-gradient(73deg, #4E2DBD -1.74%, #5625FA 77.6%);
+
+
+ }
+.rondRougePlein{
+    background: linear-gradient(73deg, #97000C -1.74%, #FF000E 77.21%);
+}
+
+
+/* ------ Toast --------- */
+.toastBackground{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: #46464cd4;
+    top: 0%;
+    left: 0%;
+
+}
+.toast{
+    background: var(--atchoum-color);
+    width: 50vw;
+    height: 20vh;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    display: flex !important;
+
+}
+.toast img{
+    width: 20px;
+    object-fit: contain;
+}

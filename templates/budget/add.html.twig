@@ -8,21 +8,12 @@
         <div class="p-5 leftPanel">
             {{ form_start(form) }}
             {{ form_row(form.montant) }}
-            <div class="isolation">
 
-                {{ form_row(form.rappel1) }}
-                <div class="d-flex flex-row align-items-center">
-                    {{ form_widget(form.montant1) }} <span class="ms-3 font-size-4">€</span>
-                </div>
 
-            </div>
-            <div class="isolation">
-                {{ form_row(form.rappel2) }}
-                <div class="d-flex flex-row align-items-center">
-                    {{ form_widget(form.montant2) }} <span class="ms-3 font-size-4">€</span>
-                </div>
+                    {{ form_row(form.montant1) }} <span class="ms-3 font-size-4">€</span>
 
-            </div>
+                  {{ form_row(form.montant2) }} <span class="ms-3 font-size-4">€</span>
+
 
             <button class="button1" type="submit">Save</button>
 

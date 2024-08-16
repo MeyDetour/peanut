@@ -9,6 +9,7 @@ use App\Repository\CategoryRepository;
 use App\Repository\PaymentRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -53,7 +54,9 @@ class TransactionType extends AbstractType
             ->add('montant', NumberType::class, [
                 'label' => "Montant"
             ])
-
+            ->add('date', DateType::class, [
+                'label' => "Date"
+            ])
             ->add('payment', EntityType::class, [
                 'label' => 'Payment method',
                 'expanded' => false,
