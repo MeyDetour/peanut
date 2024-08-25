@@ -17,15 +17,16 @@
     --grey-2: #6C6C6C;
     --stroke-color: #F7F7F7;
     --dark-text-color: #4A2A2A;
-    --dark-primary : #910101;
+    --dark-primary: #910101;
     --atchoum-color: #FFFEFE;
     --placeholder-color: #B0B0B0;
     --tertiary-color: #DCB990;
-    --text-color : #9184B4;
-    --inputStroke : #BAB6D2;
-    --dark-text-blue : #15184D;
+    --text-color: #9184B4;
+    --inputStroke: #BAB6D2;
+    --dark-text-blue: #15184D;
 }
-@media only screen and (max-device-width: 990px){
+
+@media only screen and (max-device-width: 990px) {
 
     :root {
         --font-size-1: 17px;
@@ -39,21 +40,24 @@
         --h2-font-weight: bold;
 
     }
-}@media only screen and (max-device-width: 500px){
+}
+
+@media only screen and (max-device-width: 500px) {
 
     :root {
         --font-size-1: 17px;
         --font-size-2: 2em;
-        --font-size-3: 1em;
+        --font-size-3: 2em;
         --font-size-4: 28px;
         --font-size-5: 36px;
-        --h1-font-size: 32px;
+        --h1-font-size: 2em;
         --h1-font-weight: bold;
         --h2-font-size: 32px;
         --h2-font-weight: bold;
 
     }
 }
+
 body {
     z-index: -2;
     position: relative;
@@ -86,9 +90,15 @@ h3 {
     font-style: italic;
     font-weight: bold;
 }
-.uppercase{
+.form-control{
+    line-height: normal !important;
+
+    font-size: var(--font-size-1) !important;
+}
+.uppercase {
     text-transform: uppercase;
 }
+
 button {
     border: 0;
     background: transparent;
@@ -170,6 +180,7 @@ summary {
     align-items: center;
 
 }
+
 .containerWithBackground {
     background: var(--atchoum-color);
     border: 1px solid var(--stroke-color);
@@ -178,6 +189,7 @@ summary {
     width: fit-content;
     border-radius: 30px;
 }
+
 /* ------ BASIC CLASS --------- */
 
 label, legend {
@@ -185,10 +197,12 @@ label, legend {
     color: var(--dash-color);
     font-weight: bold;
 }
-select{
+
+select {
 
     font-size: var(--font-size-2);
 }
+
 input {
     background: var(--atchoum-color) !important;
     border-radius: 30px !important;
@@ -262,33 +276,36 @@ img {
 }
 
 
-
-.rondBleu , .rondRouge , .rondBleuPlein , .rondRougePlein{
+.rondBleu, .rondRouge, .rondBleuPlein, .rondRougePlein {
     width: 20px !important;
     height: 20px;
     border-radius: 50%;
     margin-right: 24px;
 }
 
-.rondBleu{
+.rondBleu {
 
     border: 4px solid #5625FA;
 }
-.rondRouge{
+
+.rondRouge {
 
     border: 4px solid #F02828;
-}.rondBleuPlein{
-     background: linear-gradient(73deg, #4E2DBD -1.74%, #5625FA 77.6%);
+}
+
+.rondBleuPlein {
+    background: linear-gradient(73deg, #4E2DBD -1.74%, #5625FA 77.6%);
 
 
- }
-.rondRougePlein{
+}
+
+.rondRougePlein {
     background: linear-gradient(73deg, #97000C -1.74%, #FF000E 77.21%);
 }
 
 
 /* ------ Toast --------- */
-.toastBackground{
+.toastBackground {
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -297,7 +314,8 @@ img {
     left: 0%;
 
 }
-.toast{
+
+.toast {
     background: var(--atchoum-color);
     width: 50vw;
     height: 20vh;
@@ -309,13 +327,16 @@ img {
     display: flex !important;
 
 }
-.toast img{
+
+.toast img {
     width: 20px;
     object-fit: contain;
 }
 
 
 @media only screen and (max-device-width: 500px) {
-   input{ padding: 30px !important;
-   line-height: normal}
+    input {
+        padding: 30px !important;
+        line-height: normal
+    }
 }

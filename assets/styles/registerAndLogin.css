@@ -56,4 +56,11 @@
 
     #registerPage form, #loginPage form { width: 93%;}
 
+
+
+        input {
+
+            line-height: normal
+        }
 }
+
