@@ -1,6 +1,6 @@
 /* ============= HOMEPAGE===============*/
 #desktopIndex .firstHomeContainer {
-    width: 20% !important;
+    width: 30% !important;
 }
 
 #desktopIndex .popupBackground {
@@ -178,7 +178,12 @@
 
 @media only screen and (max-device-width: 500px) {
     .outcomeContainer, .incomeContainer {
-    display: none;
+    display: none !important;
     }
     .incomeAndOutcome{display: block }
+
+    #desktopIndex{    flex-direction: column !important;}
+    #desktopIndex .firstHomeContainer {
+        width: 100% !important;
+    }
 }
