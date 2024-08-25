@@ -1,6 +1,6 @@
 <details class="w-100 ">
     <summary onclick="arrowClick.call(this)"
-             class="  font-size-3 dark-text d-flex flex-row align-items-center">
+             class="  font-size-2 dark-text d-flex flex-row align-items-center">
         <div class="{{ cat.type == 'outcome' ? 'rondBleu' : 'rondRouge' }}"></div>{{ cat.name }}
     </summary>
     {% for transaction in cat.transactions %}
