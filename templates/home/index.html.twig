@@ -168,8 +168,8 @@
 
     <script>
         function hideAll() {
-            let incomes = document.querySelector('#responsivIndex .incomes');
-            let outcomes = document.querySelector('#responsivIndex .outcomes');
+            let incomes = document.querySelector('.incomeAndOutcome .incomes');
+            let outcomes = document.querySelector('.incomeAndOutcome .outcomes');
 
             incomes.classList.remove('d-block')
             outcomes.classList.remove('d-block')
@@ -178,8 +178,8 @@
         }
 
         function inverseColor() {
-            let first = document.querySelector('#responsivIndex .first')
-            let second = document.querySelector('#responsivIndex .second')
+            let first = document.querySelector('.incomeAndOutcome .first')
+            let second = document.querySelector('.incomeAndOutcome .second')
             let firstColor = window.getComputedStyle(first).color;
             let secondColor = window.getComputedStyle(second).color;
 
