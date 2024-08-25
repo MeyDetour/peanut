@@ -32,7 +32,7 @@ class PaymentController extends AbstractController
         }
 
          $payment = new Payment();
-        $paymentForm = $this->createForm(PaymentType::class, $payment);
+        $paymentForm = $this->createForm(PayementMethodType::class, $payment);
         $paymentForm->handleRequest($request);
 
 
