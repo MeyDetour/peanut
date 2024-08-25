@@ -44,7 +44,7 @@
     :root {
         --font-size-1: 17px;
         --font-size-2: 2em;
-        --font-size-3: 2em;
+        --font-size-3: 1em;
         --font-size-4: 28px;
         --font-size-5: 36px;
         --h1-font-size: 32px;
@@ -316,5 +316,6 @@ img {
 
 
 @media only screen and (max-device-width: 500px) {
-   input{ padding: 30px !important;}
+   input{ padding: 30px !important;
+   line-height: normal}
 }
