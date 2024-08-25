@@ -38,6 +38,12 @@
     line-height: normal;
     text-decoration-line: underline;
 }
+#registerPage a, #loginPage a {
+    position: absolute;
+    bottom: 3%;
+}
+
+
 
 #otherPage a {
     text-decoration: none !important;

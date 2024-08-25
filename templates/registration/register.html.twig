@@ -6,7 +6,7 @@
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
-    <div class="container py-5  d-flex flex-column align-items-center justify-content-center" id="registerPage">
+    <div class="container position-relative py-5  d-flex flex-column align-items-center justify-content-center" id="registerPage">
         <div class="d-flex flex-column align-items-center mb-5">
             <img src="{{ asset('pictures/peanutLogo.png') }}" alt="icone de Peanut">
             <h1>Welcome to Peanut !</h1>
