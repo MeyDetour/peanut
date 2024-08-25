@@ -96,6 +96,9 @@ h3 {
 
     font-size: var(--font-size-1) !important;
 }
+.form-check{
+    align-items: center !important;
+}
 .uppercase {
     text-transform: uppercase;
 }
