@@ -61,7 +61,7 @@
 body {
     z-index: -2;
     position: relative;
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-4);
     overflow-x: hidden;
     font-family: 'Inter', sans-serif !important;
     color: var(--dash-color);
@@ -82,6 +82,7 @@ h2 {
     font-size: var(--font-size-2);
     font-weight: 600;
     color: var(--dark-text-color);
+    margin: 0;
 }
 
 h3 {
