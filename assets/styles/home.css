@@ -116,7 +116,7 @@
      color: #15184d2e;
 }
  .incomeAndOutcome .focus{
-     color: #15184DFF
+     color: #15184DFF !important;
  }
 .incomeAndOutcome .incomeContainer{
     display: none;
