@@ -25,7 +25,8 @@ class PayementMethodType extends AbstractType
                 "expanded"=>true,
             ])
             ->add('name',TextType::class,[
-'label'=>'Name'
+'label'=>'Payment name',
+'placeholder'=>'Credit card 1',
             ])
         ;
     }
