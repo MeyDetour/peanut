@@ -180,21 +180,18 @@
         function inverseColor() {
             let first = document.querySelector('.incomeAndOutcome .first')
             let second = document.querySelector('.incomeAndOutcome .second')
-            let firstColor = window.getComputedStyle(first).color;
-            let secondColor = window.getComputedStyle(second).color;
 
 
-
-            if (firstColor === 'rgb(21, 24, 77)' || firstColor === '#15184DFF') {
-                first.style.color = '#15184d2e';
+            if (first.classList.contains('focus')  ) {
+              first.classList.remove('focus')
             } else {
-                first.style.color = '#15184DFF';
+                first.classList.add('focus')
             }
 
-            if (secondColor === 'rgba(21,24,77,0.18)' || secondColor === '#15184d2e') {
-                second.style.color = '#15184DFF';
+            if (second.classList.contains('focus')  ) {
+                second.classList.remove('focus')
             } else {
-                second.style.color = '#15184d2e';
+                second.classList.add('focus')
             }
 
         }

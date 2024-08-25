@@ -113,8 +113,11 @@
     z-index: 1;
 
     font-size: var(--font-size-2);
-    color: #15184DFF
+     color: #15184d2e;
 }
+ .incomeAndOutcome .focus{
+     color: #15184DFF
+ }
 .incomeAndOutcome .incomeContainer{
     display: none;
 }
