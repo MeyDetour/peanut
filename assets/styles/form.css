@@ -92,9 +92,11 @@ input:checked{
 .form-check {
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: center !important;
 }
-
+.form-check input{
+    margin-right: 20px;
+}
 #formPage .isolation > #budget_montant1 ,#formPage .isolation > #budget_montant2 {
 
 }
