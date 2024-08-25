@@ -23,41 +23,29 @@ class PaymentController extends AbstractController
         $this->repository = $repository;
     }
 
-    #[Route('/payment', name: 'app_payment')]
-    public function index(Request $request, EntityManagerInterface $manager, PaymentRepository $repository): Response
+ #[Route('/payment/new', name: 'new_payment')]
+    public function newPayement(Request $request, EntityManagerInterface $manager, PaymentRepository $repository): Response
     {
         $user = $this->getUser();
         if(!$user){
             return $this->redirectToRoute('app_login');
         }
 
-        $cash = new Payment();
-        $card = new Payment();
-        $cashForm = $this->createForm(PaymentType::class, $cash);
-        $cardForm = $this->createForm(PaymentType::class, $card);
-        $cashForm->handleRequest($request);
-        $cardForm->handleRequest($request);
-        $cash->setType('cash');
-        $card->setType('card');
-        if ($cashForm->isSubmitted() && $cashForm->isValid()) {
+         $payment = new Payment();
+        $paymentForm = $this->createForm(PaymentType::class, $payment);
+        $paymentForm->handleRequest($request);
 
-            $cash->setOwner($this->getUser());
-            $manager->persist($cash);
-            $manager->flush();
-            return $this->redirectToRoute('app_payment');
-        }
-        if ($cardForm->isSubmitted() && $cardForm->isValid()) {
 
-            $card->setOwner($this->getUser());
-            $manager->persist($card);
+        if ($paymentForm->isSubmitted() && $paymentForm->isValid()) {
+            $payment->setOwner($this->getUser());
+            $manager->persist($payment);
             $manager->flush();
-            return $this->redirectToRoute('app_payment');
+            return $this->redirectToRoute('new_payment');
         }
         return $this->render('payment/index.html.twig', [
             'cards' => $repository->findBy(['type' => 'card','owner'=>$user]),
             'wallets' => $repository->findBy(['type' => 'cash','owner'=>$user]),
-            'formCard' => $cardForm->createView(),
-            'formCash' => $cashForm->createView(),
+            'form' => $paymentForm->createView()
         ]);
     }
     #[Route('/payment/{id}/edit', name: 'edit_payment')]

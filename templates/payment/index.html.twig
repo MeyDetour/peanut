@@ -5,68 +5,16 @@
 {% block body %}
     {% include 'component/desktop/header.html.twig'  with {'path':path('app_other'),'title':"Pay Methods"} %}
     <div class=" centered " id="paymentContainer">
-        <div class="popupBackground centered d-none flex-column popupform" id="popupFormCard">
-            <div class="w-50">
-                <div class="header">
-                    <img src="{{ asset('pictures/popup-dk.png') }}" alt="">
-                    <span>Add bank card</span>
-                    <button onclick="closeAll()"><img src="{{ asset('pictures/croix.svg') }}" alt=""></button>
-                </div>
-                <div class="body">
-                    {{ form_start(formCard) }}
-                    {{ form_row(formCard.name,{'label':'Bank card name'}) }}
-                    <button type="submit" class="button1">Save</button>
-                    {{ form_end(formCard) }}
-                </div>
 
-            </div>
-        </div>
-
-
-        <div class="popupBackground centered d-none flex-column popupform" id="popupFormCash">
-            <div class="w-50">
-                <div class="header">
-                    <img src="{{ asset('pictures/popup-dk.png') }}" alt="">
-                    <span>Add wallet</span>
-                    <button onclick="closeAll()"><img src="{{ asset('pictures/croix.svg') }}" alt=""></button>
-                </div>
-                <div class="body">
-                    {{ form_start(formCash) }}
-                    {{ form_row(formCash.name,{'label':'Wallet name '}) }}
-
-                    <button type="submit" class="button1">Save</button>
-                    {{ form_end(formCash) }}
-                </div>
-
-            </div>
-        </div>
 
         <div class="d-flex flex-lg-row flex-column justify-content-between align-items-start" id="formPage">
             <div class="p-5 leftPanel">
                 <h2>Add pay method</h2>
 
-                <div class="d-flex w-50   flex-column justify-content-evenly align-items-center"
-                     id="choicePaiementPage">
-
-                    <div onclick="openCardForm()" class="cardPaiement">
-                        <div class="whiteBg"><img src="{{ asset('pictures/creditCard.svg') }}" alt="icon credit card">
-                            <span class="font-size-3 dash">Credit Card</span>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row align-items-center">
-                        <div class="hr ms-5"></div>
-                        <span class="mx-5 font-size-3 dash">OU</span>
-                        <div class="hr me-5"></div>
-                    </div>
-
-
-                    <div onclick="openCashForm()" class="cardPaiement">
-                        <div class="whiteBg"><img src="{{ asset('pictures/cash.svg') }}" alt="icon credit card">
-                            <span class="font-size-3 dash">Cash</span>
-                        </div>
-                    </div>
-
-                </div>
+                {{ form_start(formCard) }}
+                {{ form_row(formCard.name,{'label':'Bank card name'}) }}
+                <button type="submit" class="button1">Save</button>
+                {{ form_end(formCard) }}
             </div>
             <div class="rightPanel">
                {% include 'component/desktop/payments.html.twig' with {'cards':cards,'wallets':wallets} %}
