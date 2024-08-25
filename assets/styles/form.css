@@ -95,7 +95,7 @@ input:checked{
     align-items: center !important;
 }
 .form-check input{
-    margin-right: 20px;
+    margin-right: 10px;
 }
 #formPage .isolation > #budget_montant1 ,#formPage .isolation > #budget_montant2 {
 
