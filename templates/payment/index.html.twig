@@ -18,7 +18,7 @@
                 {{ form_end(form) }}
             </div>
             <div class="rightPanel">
-               {% include 'component/desktop/payments.html.twig' with {'cards':cards,'wallets':wallets} %}
+                {% include 'component/desktop/payments.html.twig' with {'cards':cards,'wallets':wallets} %}
             </div>
         </div>
 
@@ -26,26 +26,9 @@
     </div>
     <script defer>
 
-        let cashForm = document.querySelector('#popupFormCash')
-        let cardForm = document.querySelector('#popupFormCard')
-        closeAll()
-
-        function closeAll() {
-            cardForm.classList.add('d-none')
-            cashForm.classList.add('d-none')
-        }
-
-
-        function openCardForm() {
-            closeAll()
-            cardForm.classList.remove('d-none')
-            cardForm.classList.add('d-flex')
-        }
-
-        function openCashForm() {
-            closeAll()
-            cashForm.classList.remove('d-none')
-            cashForm.classList.add('d-flex')
+        if (innerWidth <= 500) {
+            let leftPanel = document.querySelector('.leftPanel')
+           leftPanel.innerHTML +=  document.querySelector('.rightPanel').innerHTML
         }
 
     </script>
