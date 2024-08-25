@@ -69,7 +69,10 @@
      display: none;
     position: relative;
     height: 100vh;
-}
+     width: 100%;
+     margin-top: 128px;
+
+ }
 
 .outcomeContainer .bodyOfContainer {
     background: var(--atchoum-color);
