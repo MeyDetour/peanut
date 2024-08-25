@@ -313,3 +313,8 @@ img {
     width: 20px;
     object-fit: contain;
 }
+
+
+@media only screen and (max-device-width: 500px) {
+   input{ padding: 30px !important;}
+}
