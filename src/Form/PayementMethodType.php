@@ -17,18 +17,20 @@ class PayementMethodType extends AbstractType
             ->add('type', ChoiceType::class, [
                 'label' => 'Type',
 
-                'choices'=>[
-                    'Credit card'=>'card',
-                    'Cash'=>'cash',
+                'choices' => [
+                    'Credit card' => 'card',
+                    'Cash' => 'cash',
                 ],
-                "multiple"=>false,
-                "expanded"=>true,
+                "multiple" => false,
+                "expanded" => true,
             ])
-            ->add('name',TextType::class,[
-'label'=>'Payment name',
-'placeholder'=>'Credit card 1',
-            ])
-        ;
+            ->add('name', TextType::class, [
+                'label' => 'Payment name',
+                'attr' => [
+                    'placeholder' => 'Credit card 1',
+                ]
+
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
