@@ -12,7 +12,8 @@
                 <h2>Add pay method</h2>
 
                 {{ form_start(form) }}
-                {{ form_row(form.name,{'label':'Bank card name'}) }}
+                {{ form_row(form.type,{'label':'Payment type'}) }}
+                {{ form_row(form.name,{'label':'Payment name'}) }}
                 <button type="submit" class="button1">Save</button>
                 {{ form_end(form) }}
             </div>
