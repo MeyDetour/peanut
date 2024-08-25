@@ -25,11 +25,21 @@
 
     </div>
     <script defer>
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 500) {
+                let leftPanel = document.querySelector('.leftPanel');
+                let rightPanel = document.querySelector('.rightPanel');
 
-        if (innerWidth <= 500) {
-            let leftPanel = document.querySelector('.leftPanel')
-           leftPanel.innerHTML +=  document.querySelector('.rightPanel').innerHTML
-        }
+                // Assurez-vous que les éléments existent
+                if (leftPanel && rightPanel) {
+                    // Ajoutez le contenu de rightPanel à leftPanel
+                    leftPanel.innerHTML += rightPanel.innerHTML;
+
+                    // Optionnel : Masquer le panneau de droite après le transfert
+                    rightPanel.style.display = 'none';
+                }
+            }
+        });
 
     </script>
 
