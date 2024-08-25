@@ -56,7 +56,7 @@ class PaymentController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
         if($payment->getOwner() != $user){
-            return $this->redirectToRoute('app_payment');
+            return $this->redirectToRoute('new_payment');
         }
         $payementForm = $this->createForm(PayementMethodType::class, $payment);
         $payementForm->handleRequest($request);
@@ -65,7 +65,7 @@ class PaymentController extends AbstractController
         if ($payementForm->isSubmitted() && $payementForm->isValid()) {
             $manager->persist($payment);
             $manager->flush();
-            return $this->redirectToRoute('app_payment');
+            return $this->redirectToRoute('new_payment');
         }
         return $this->render('payment/edit.html.twig', [
             'cards' => $repository->findBy(['type' => 'card','owner'=>$user]),
@@ -81,11 +81,11 @@ class PaymentController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
         if($payment->getOwner() != $user){
-            return $this->redirectToRoute('app_payment');
+            return $this->redirectToRoute('new_payment');
         }
         $manager->remove($payment);
         $manager->flush();
-        return  $this->redirectToRoute('app_payment');
+        return  $this->redirectToRoute('new_payment');
     }
     public function stat($id)
     {
