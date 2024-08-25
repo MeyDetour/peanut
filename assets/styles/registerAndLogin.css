@@ -51,3 +51,9 @@
 #loginPage form .checkbox input {
     width: 5%;
 }
+
+@media only screen and (max-device-width: 500px) {
+
+    #registerPage form, #loginPage form { width: 93%;}
+
+}

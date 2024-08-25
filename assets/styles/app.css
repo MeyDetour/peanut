@@ -39,6 +39,20 @@
         --h2-font-weight: bold;
 
     }
+}@media only screen and (max-device-width: 500px){
+
+    :root {
+        --font-size-1: 17px;
+        --font-size-2: 2em;
+        --font-size-3: 2em;
+        --font-size-4: 28px;
+        --font-size-5: 36px;
+        --h1-font-size: 32px;
+        --h1-font-weight: bold;
+        --h2-font-size: 32px;
+        --h2-font-weight: bold;
+
+    }
 }
 body {
     z-index: -2;
