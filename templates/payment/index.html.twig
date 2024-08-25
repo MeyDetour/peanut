@@ -25,19 +25,13 @@
 
     </div>
     <script defer>
-        window.addEventListener("DOMContentLoaded", function() {
-            console.log(window.innerWidth)
+        window.addEventListener("DOMContentLoaded", function () {
             if (window.innerWidth <= 1000) {
                 let leftPanel = document.querySelector('.leftPanel');
                 let rightPanel = document.querySelector('.rightPanel');
 
-                console.log(leftPanel,rightPanel)
-                // Assurez-vous que les éléments existent
                 if (leftPanel && rightPanel) {
-                    // Ajoutez le contenu de rightPanel à leftPanel
                     leftPanel.innerHTML += rightPanel.innerHTML;
-
-                    // Optionnel : Masquer le panneau de droite après le transfert
                     rightPanel.style.display = 'none';
                 }
             }

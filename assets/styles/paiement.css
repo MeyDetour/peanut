@@ -86,9 +86,12 @@
         margin-top: -53px !important;
         z-index: 1;
         position: relative;
-        border-radius: 60px 60px 0px 0px;
+        border-radius: 0px;
         margin: 0;
         width: 100vw;
         background: var(--background-color);
+    }
+    .paymentContainer{
+        width: 100%;
     }
 }

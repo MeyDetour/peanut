@@ -1,7 +1,7 @@
 {% if cards is not empty %}
     <h2 class="my-5">Credit Cards</h2>
     {% for card in cards %}
-        <a  href="{{ path('edit_payment',{'id':card.id}) }}" class="w-50 containerWithBackground my-2 d-flex flex-column align-items-center text-decoration-none">
+        <a  href="{{ path('edit_payment',{'id':card.id}) }}" class="w-50 containerWithBackground paymentContainer my-2 d-flex flex-column align-items-center text-decoration-none">
             <h3 class="text-center">{{ card.name }}</h3>
             <div class="d-flex flex-row w-100 justify-content-between">
                 <div class="d-flex flex-column align-items-start">
@@ -21,7 +21,7 @@
                 {% if wallets is not empty %}
                     <h2 class="my-5">Wallets</h2>
                     {% for wallet in wallets %}
-                        <a  href="{{ path('edit_payment',{'id':wallet.id}) }}" class="w-50 containerWithBackground my-2 d-flex flex-column align-items-center text-decoration-none">
+                        <a  href="{{ path('edit_payment',{'id':wallet.id}) }}" class="w-50 paymentContainer containerWithBackground my-2 d-flex flex-column align-items-center text-decoration-none">
                             <h3 class="text-center">{{ wallet.name }}</h3>
                             <div class="d-flex flex-row w-100 justify-content-between">
                                 <div class="d-flex flex-column align-items-start">
