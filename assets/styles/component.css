@@ -20,7 +20,7 @@
 /* ============= NAVBAR===============*/
 
 .navbar-desktop {
-    background: #002545;
+    background: var(--primary-color);
     border-radius: 0px 0px 28px 28px;
     height: 8vh;
     position: relative;
@@ -82,7 +82,7 @@
     width: 94% !important;
     border-radius: 622px;
     height: 158px;
-    background: var(--dark-primary);
+    background: var(--primary-color);
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
