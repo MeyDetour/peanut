@@ -82,7 +82,7 @@
 }
 
  .backgroundWhite {
-    background: var(--atchoum-color);
+     background: #8080800a;
     border-radius: 0px 30px 30px 30px;
     transition: 0.5s all;
     transition-delay: 0.2s;
