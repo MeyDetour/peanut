@@ -226,6 +226,8 @@ input[type=radio] {
 .button1 {
     text-decoration: none;
     padding: 5px 20px;
+        width: 365px;
+
     background: linear-gradient(86deg, #4E2CBD -7.69%, #5625FA 101.06%);
     color: var(--atchoum-color);
     font-size: var(--font-size-3);

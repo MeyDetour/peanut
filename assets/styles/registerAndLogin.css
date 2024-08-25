@@ -54,13 +54,18 @@
 
 @media only screen and (max-device-width: 500px) {
 
-    #registerPage form, #loginPage form { width: 93%;}
+    #registerPage form, #loginPage form {
+        width: 93%;
+    }
 
 
+    input {
 
-        input {
+        line-height: normal
+    }
 
-            line-height: normal
-        }
+    #registerPage a, #loginPage a, #otherPage a {
+        font-size: var(--font-size-3);
+    }
 }
 
