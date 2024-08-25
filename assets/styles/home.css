@@ -74,17 +74,6 @@
 
  }
 
-.outcomeContainer .bodyOfContainer {
-    background: var(--atchoum-color);
-    border-radius: 0px 40px 40px 40px;
-    padding: 42px;
-}
-
-.incomeContainer .bodyOfContainer {
-    background: var(--atchoum-color);
-    border-radius: 40px 0px 40px 40px;
-    padding: 42px;
-}
 
  .outcomeContainer,  .incomeContainer {
     position: absolute;
@@ -126,7 +115,9 @@
     font-size: var(--font-size-2);
     color: var(--dark-text-blue)
 }
-
+.incomeAndOutcome .incomeContainer{
+    display: none;
+}
  .incomeAndOutcome .whiteSelector {
     position: absolute;
     text-align: start;
