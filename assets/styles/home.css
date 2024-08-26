@@ -1,6 +1,6 @@
 /* ============= HOMEPAGE===============*/
 #desktopIndex .firstHomeContainer {
-    width: 30% !important;
+    width: 32% !important;
 }
 
 #desktopIndex .popupBackground {
@@ -37,7 +37,7 @@
 
 
 #desktopIndex .incomeContainer, #desktopIndex .outcomeContainer {
-    width: 28% !important;
+    width: 32% !important;
 }
 
 #desktopIndex .incomeContainer hr, #desktopIndex .outcomeContainer hr {
