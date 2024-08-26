@@ -46,13 +46,14 @@
 
 #popoverDk {
     position: absolute;
-    bottom: -80%;
+    bottom: -87%;
     border: 0;
     left: 50%;
     width: 100%;
-    border-radius: 0px 0px 23px 23px;
+
+    border-radius: 23px;
     transform: translateX(-50%);
-    background: var(--tertiary-color);
+    background: #556e83;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
