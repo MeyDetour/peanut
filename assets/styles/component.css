@@ -30,7 +30,7 @@
     color: var(--atchoum-color);
     font-weight: bold;
     text-decoration: none;
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-3);
     width: calc(80% / 5.5);
     text-align: center;
 }
