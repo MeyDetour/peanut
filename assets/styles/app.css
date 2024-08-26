@@ -211,7 +211,7 @@ input {
     border: var(--inputStroke) 1px solid !important;
     padding: 10px !important;
     text-align: left;
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-3);
 }
 
 input::placeholder {
