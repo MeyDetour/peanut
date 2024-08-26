@@ -2,8 +2,8 @@
 :root {
     --border-radius: 6px;
     --font-size-1: 17px;
-    --font-size-2: 20px;
-    --font-size-3: 24px;
+    --font-size-2: 23px;
+    --font-size-3: 20px;
     --font-size-4: 17px;
     --font-size-5: 36px;
     --h1-font-size: 32px;
@@ -73,7 +73,7 @@ body {
 }
 
 h1 {
-    font-size: var(--h1-font-size);
+    font-size: var(--font-size-1);
     font-weight: var(--h1-font-weight);
     color: var(--text-color);
 }
