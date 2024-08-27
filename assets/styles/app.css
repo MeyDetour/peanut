@@ -197,7 +197,6 @@ summary {
 label, legend {
     font-size: var(--font-size-3);
     color: var(--dash-color);
-    font-weight: bold;
 }
 
 select {
