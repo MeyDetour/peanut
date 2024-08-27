@@ -195,7 +195,7 @@ summary {
 /* ------ BASIC CLASS --------- */
 
 label, legend {
-    font-style: var(--font-size-3);
+    font-size: var(--font-size-3);
     color: var(--dash-color);
     font-weight: bold;
 }
