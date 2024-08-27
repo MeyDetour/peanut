@@ -94,7 +94,7 @@ h3 {
 .form-control{
     line-height: normal !important;
 
-    font-size: var(--font-size-4) !important;
+    font-size: var(--font-size-3) !important;
 }
 .form-select{
     font-size: var(--font-size-3) !important;
