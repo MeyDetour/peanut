@@ -96,7 +96,9 @@ h3 {
 
     font-size: var(--font-size-4) !important;
 }
-
+.form-select{
+    font-size: var(--font-size-3) !important;
+}
 .uppercase {
     text-transform: uppercase;
 }
