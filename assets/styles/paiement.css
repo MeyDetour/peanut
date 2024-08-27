@@ -92,6 +92,6 @@
         background: var(--background-color);
     }
     .paymentContainer{
-        width: 100%;
+        width: 100% !important;
     }
 }
