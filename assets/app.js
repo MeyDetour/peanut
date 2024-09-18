@@ -1,5 +1,4 @@
 import './bootstrap.js';
-import '@symfony/stimulus-bundle';
 
 /*
  * Welcome to your app's main JavaScript file!

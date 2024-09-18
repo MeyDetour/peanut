@@ -65,10 +65,11 @@
 
 #formPage #category_type div, #formPage #operation_type div, #formPage #operation_addingType div {
     width: fit-content;
-    margin-inline: 10px;
+    margin-inline: 22px;
     display: flex;
     flex-direction: row;
     align-items: center;
+
 }
 
 #formPage #operation_addingType div {
