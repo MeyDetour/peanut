@@ -98,7 +98,7 @@
 #popoverRp{
     position: absolute;
     bottom: 107%;
-    background: var(--dark-primary);
+    background: var(--primary-color);
     color: var(--atchoum-color);
     width: 62% !important;
     height: 70%;
