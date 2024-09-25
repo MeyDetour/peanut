@@ -144,7 +144,6 @@ public function edit(Request $request, EntityManagerInterface $manager, Category
 
         $this->manager->persist($transaction);
         $this->manager->flush();
-        dump($transaction);
         return $transaction;
     }
 

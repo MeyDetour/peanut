@@ -152,7 +152,7 @@ class OperationController extends AbstractController
 
             $this->transactionRepository->findBy(['name' => $operation->getName()]) as $transaction) {
             if (in_array($transaction->getDate()->format('Y-m-d'), $occurs) && $operation->getType() == $transaction->getType() ) {
-                dump($transaction);
+
                 $this->manager->remove($transaction);
             }
         }
@@ -180,7 +180,6 @@ class OperationController extends AbstractController
                 $this->loadOperation($operation);
             }
         }
-        dump('aucune opération');
 
     }
 
@@ -267,7 +266,7 @@ class OperationController extends AbstractController
                                     }
                                 } else {
                                     if ($this->isDateBeforeDate($date, $today)) {
-                                        dump($date);
+
                                         $this->transactionController->createTransaction($operation, $date);
                                     }
 
@@ -306,7 +305,7 @@ class OperationController extends AbstractController
 
                         $date->modify('+1 day');
                         if ($this->isDateBeforeDate($date, $endDate)) {
-                            dump($date);
+
                             if (!in_array($date->format('Y-m-d'), $occurs)) {
                                 $this->transactionController->createTransaction($operation, $date);
                             }
@@ -316,11 +315,8 @@ class OperationController extends AbstractController
 
 
                 }
-                dump('ni annuel ni mensuel');
             }
-            dump('date supérieur');
 
-            dump('année supérieur', $dayOfOperation, $operation);
         }
     }
 
@@ -402,7 +398,7 @@ class OperationController extends AbstractController
                                         }
                                     } else {
                                         if ($this->isDateBeforeDate($date, $today)) {
-                                            dump($date);
+
                                             $unvalidateOperations [] = $this->createTransactionToValidate($operation, $date);
 
                                         }
@@ -442,7 +438,7 @@ class OperationController extends AbstractController
 
                             $date->modify('+1 day');
                             if ($this->isDateBeforeDate($date, $endDate)) {
-                                dump($date);
+
                                 if (!in_array($date->format('Y-m-d'), $occurs)) {
                                     $unvalidateOperations[] = $this->createTransactionToValidate($operation, $date);
 
