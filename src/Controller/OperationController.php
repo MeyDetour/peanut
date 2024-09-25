@@ -449,13 +449,10 @@ class OperationController extends AbstractController
 
 
                     }
-                    dump('ni annuel ni mensuel');
                 }
-                dump('date supérieur');
 
             }
         }
-        dump('aucune opération');
         return ($unvalidateOperations);
     }
 
