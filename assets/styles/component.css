@@ -82,7 +82,7 @@
     display: none;
     width: 94% !important;
     border-radius: 622px;
-    height: 158px;
+    height: 134px;
     background: var(--primary-color);
     flex-direction: row;
     justify-content: space-around;
@@ -90,8 +90,8 @@
 
 }
 .navbar-responsif img {
-    width: 77px;
-    height: 77px;
+    width: 60px;
+    height: 60px;
 
 }
 
